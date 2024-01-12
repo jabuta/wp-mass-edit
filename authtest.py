@@ -1,9 +1,7 @@
 import requests
 import base64
-from access import keys
+from access import keys, url
 
-# Define your WP URL
-url = 'https://www.bizlatinhub.com/wp-json/wp/v2'
 
 # Define WP Keys
 user = keys['wp_key']
