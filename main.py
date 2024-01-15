@@ -65,7 +65,10 @@ def ids_to_delete(redirect_list):
     ids_delete = []
     for slug in redirect_list:
         print(slug)
+        slug[0].replace('/es/', '')      
         r = requests.get(url + f'/posts?slug={slug[0].replace("/","")}&_fields=id')
+        if len(r.json()) == 0:
+            continue
         ids_delete.append((r.json()[0]['id']))
     return ids_delete
 
